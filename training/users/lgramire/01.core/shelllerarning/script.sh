@@ -19,6 +19,7 @@ echo $KERNELORG_OURFILE
 download(){
 echo "download function"
 wget $KERNELORG_PAT$KERNELORG_OURFILE
+tar xf $KERNELORG_OURFILE
 }
 download
 
