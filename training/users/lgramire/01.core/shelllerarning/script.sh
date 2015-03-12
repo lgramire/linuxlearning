@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x
+#set -x
 
 LOCATION=$1
 VERSION=$2
@@ -14,12 +14,18 @@ KERNELORG_VERSION=$VERSION
 KERNELORG_FILETYPE=".tar."$FILETYPE
 KERNELORG_OURFILE="$KERNELORG_FILE$KERNELORG_VERSION$KERNELORG_FILETYPE"
 
-echo $KERNELORG_OURFILE
+#echo $KERNELORG_OURFILE
 
 download(){
-echo "download function"
-wget $KERNELORG_PAT$KERNELORG_OURFILE
-tar xf $KERNELORG_OURFILE
+echo "Verify if Kernel file already exists"
+if [ ! -f "$KERNELORG_OURFILE" ];
+then
+	echo "Downloading file:"
+	wget $KERNELORG_PAT$KERNELORG_OURFILE
+	tar xf $KERNELORG_OURFILE
+else
+	echo "Kernel File already exists!"
+fi
 }
 download
 
