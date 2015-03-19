@@ -1,0 +1,12 @@
+Minnowboard
+
+|00| README
+|01| Kernel Compilation
+|02| Camera
+|03| GPIO
+|04| LED
+|XX| Android
+
+~/android-ia/device/intel/gmin-kernel/x86_64/lib
+
+# End of file
